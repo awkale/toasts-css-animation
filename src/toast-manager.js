@@ -23,10 +23,13 @@ const StyledToastContainer = styled.div`
   width: 720px;
   overflow: hidden;
   transition: all 3s linear;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
 `;
 
 const StyledToast = styled.div`
-  background: rgba(190, 38, 38, 0.7);
+  background: rgba(190, 38, 38, 0.9);
   border-radius: 2px;
   font-size: 11px;
   color: #fff;
@@ -37,15 +40,7 @@ const StyledToast = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  /* &.toast-enter {
-    transform: translateY(100%);
-  }
-
-  &.toast-exit {
-    transform: translateY(0%);
-  } */
-  animation: ${KeyframeToast} 0.3s ease-in-out;
+  animation: ${KeyframeToast} .2s ease-in-out;
 
   &:hover {
     background: rgba(190, 38, 38, 1);
@@ -61,7 +56,7 @@ const StyledToast = styled.div`
     cursor: pointer;
 
     &:hover {
-      background: #910f0f;
+      background: #dd3737;
     }
   }
 `;
@@ -101,7 +96,7 @@ export function ToastProvider({ children }) {
       <ToastContainer>
         {toasts.map(({ content, id, ...rest }) => (
           <Toast key={id} Toast={Toast} onDismiss={onDismiss(id)} {...rest}>
-            {content}
+            alert {id} {content}
           </Toast>
         ))}
       </ToastContainer>

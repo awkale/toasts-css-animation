@@ -7,7 +7,7 @@ import "./styles.css";
 
 function Demo() {
   const { add } = useToasts();
-  return <button onClick={() => add("Click to dismiss!")}>Add toast</button>;
+  return <button onClick={() => add("Oh no, something went wrong!")}>Add toast</button>;
 }
 
 function App() {
